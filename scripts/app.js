@@ -26,5 +26,17 @@
 // alert(pow(number2, degree))
 
 //3
-const a = prompt("Number A");
-const b = prompt("Number B");
+const a = Number(prompt("Number A"));
+const b = Number(prompt("Number B"));
+function sum (a, b){
+    if (isNaN(a) || isNaN(b)){
+        return 'some error'
+    }
+    if (a === 0){
+        return b
+    } else {
+        return sum(a + 1, b - 1)
+    }
+}
+const sumOf = sum(a, b)
+alert(+sumOf)
